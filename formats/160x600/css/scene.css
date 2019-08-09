@@ -1,0 +1,646 @@
+.centerThisVertical {
+    top: 50%;
+    -webkit-transform: translateY(-50%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: translateY(-50%); /* IE 9 */
+    transform: translateY(-50%); /* IE 10, Fx 16+, Op 12.1+ */
+    position: absolute;
+}
+
+.centerThisHorizontal {
+    left: 50%;
+    -webkit-transform: translateX(-50%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: translateX(-50%); /* IE 9 */
+    transform: translateX(-50%); /* IE 10, Fx 16+, Op 12.1+ */
+    position: absolute;
+}
+
+.centerThis {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: translate(-50%, -50%); /* IE 9 */
+    transform: translate(-50%, -50%); /* IE 10, Fx 16+, Op 12.1+ */
+    position: absolute;
+}
+
+
+
+html {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+    background-color: #FFFFFF;
+    margin: 0px;
+    padding: 0px;
+    width: 300px;
+    height: 600px;
+    overflow: hidden;
+    color: #fff;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+#container {
+    position: absolute;
+    width: 160px;
+    height: 600px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 100;
+    background-color: #f4f0de;
+}
+
+#black-fader {
+    position: absolute;
+    z-index: 9998;
+    width: 160px;
+    height: 600px;
+    pointer-events: none;
+    background-color: #000000;
+}
+
+#canvas {
+    position: absolute;
+    z-index: 1;
+}
+
+#banner_border {
+    z-index: 99999;
+    position: absolute;
+    border: 1px solid #666666;
+    width: 160px;
+    height: 600px;
+    pointer-events: none;
+}
+
+.full-screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 999
+}
+
+#copy-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.copy {
+    font-family: 'FiatAdvert-Euro', Arial, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.header {
+    color: #fff;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1;
+	font-family: 'FiatAdvert-Euro', Arial, sans-serif;
+}
+
+.subheader {
+    color: #fff;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 1.1;
+}
+
+sup{
+    font-size: 7px !important;
+    vertical-align:super;
+}
+
+#title1-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 138px;
+    left: 12px;
+    font-size: 38px;
+    pointer-events: none;
+    letter-spacing: 0.8px;
+    text-align: left;
+}
+
+#subtitle-line1-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 172px;
+    pointer-events: none;
+    font-size: 24px;
+    left: 2px;
+}
+
+#title8-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 144px;
+    left: 2px;
+    font-size: 28px;
+    pointer-events: none;
+    letter-spacing: 0.5px;
+    text-align: center;
+    line-height: 20px;
+}
+#subtitle-line8-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 191px;
+    left: 1px;
+    font-size: 10px;
+    pointer-events: none;
+    letter-spacing: 0.6px;
+    font-weight: 400;
+}
+
+#title2-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 117px;
+    pointer-events: none;
+    color: #244057;
+    
+}
+
+#subtitle-line2-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 426px;
+    pointer-events: none;
+    color: #244057;
+}
+
+#title3-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 42px;
+    pointer-events: none;
+    color: #f4f0de;
+    opacity: 0;
+}
+
+#subtitle-line3-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 426px;
+    pointer-events: none;
+    color: #f4f0de;
+}
+
+#subtitle-line3 div:nth-child(4) {
+    font-size: 7px !important;
+    vertical-align: super;
+    margin-left: -4px;
+    margin-top: 0px;
+    display: inline-block;
+}
+
+#subtitle-line4 div:nth-child(4) {
+    font-size: 7px !important;
+    vertical-align: super;
+    margin-left: -4px;
+    margin-top: 0px;
+    display: inline-block;
+}
+
+#subtitle-line5 div:nth-child(4) {
+    font-size: 7px !important;
+    vertical-align: super;
+    margin-left: -4px;
+    margin-top: 0px;
+    display: inline-block;
+}
+
+#subtitle-line6 div:nth-child(4) {
+    font-size: 7px !important;
+    vertical-align: super;
+    margin-left: -4px;
+    margin-top: 0px;
+    display: inline-block;
+}
+
+#subtitle-line7 div:nth-child(4) {
+    font-size: 7px !important;
+    vertical-align: super;
+    margin-left: -4px;
+    margin-top: 0px;
+    display: inline-block;
+}
+
+
+#title4-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 42px;
+    pointer-events: none;
+    color: #244057;
+    opacity: 0;
+}
+
+#subtitle-line4-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 426px;
+    pointer-events: none;
+    color: #244057;
+    letter-spacing: 0.5px;
+}
+
+#title5-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 42px;
+    pointer-events: none;
+    color: #f4f0de;
+    opacity: 0;
+}
+
+#subtitle-line5-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 426px;
+    pointer-events: none;
+    color: #f4f0de;
+    letter-spacing: 0.5px;
+}
+
+#title6-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 42px;
+    pointer-events: none;
+    color: #244057;
+    opacity: 0;
+}
+
+#subtitle-line6-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 426px;
+    pointer-events: none;
+    color: #244057;
+    letter-spacing: 0.5px;
+}
+
+#title7-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 42px;
+    pointer-events: none;
+    color: #f4f0de;
+    opacity: 0;
+}
+
+#subtitle-line7-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 426px;
+    pointer-events: none;
+    color: #f4f0de;
+    letter-spacing: 0.5px;
+}
+
+#cta-container {
+    width: 120px;
+    height: 60px;
+    position: absolute;
+    text-align: center;
+    bottom: -75px;
+    opacity: 1;
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+    left: 20px;
+}
+
+.cta {
+    font-size: 14px;
+    color: #FFF;
+    padding: 0px 7px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'FiatAdvert-Euro', Arial, sans-serif;
+    margin-top: -60px;
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+}
+
+.cta:hover {
+    background-color: #ff0000;
+}
+
+.logo {
+    position: absolute;
+    opacity: 0;
+}
+
+#logo {
+    height: 45px;
+    width: 45px;
+    top: 20px;
+    opacity: 0;
+}
+
+#logo-fca {
+    height: 14px;
+    bottom: 14px;
+    left: 67px;
+}
+
+#terms {
+    font-size: 8px;
+    color: #244057;
+    padding: 5px 7px;
+    width: 90%;
+    position: absolute;
+    bottom: 82px;
+    font-family: "Arial", sans-serif;
+    opacity: 0;
+    text-align: center;
+    letter-spacing: -0.25px;
+    line-height: 10px;
+}
+
+ /* #terms:after {
+    position: absolute;
+    content: "";
+    width: 38px;
+    height: 7px;
+    background: transparent url('../img/leasys.png') no-repeat;
+} */
+
+#terms:before {
+    content:"*";
+    margin-left: -3px;
+    position: absolute;
+} 
+
+#terms1 {
+    font-size: 7px;
+    color: #244057;
+    padding: 5px 7px;
+    position: absolute;
+    bottom: 5px;
+    font-family: "Arial", sans-serif;
+    opacity: 0;
+}
+
+#terms1:before {
+    content:"†";
+    margin-left: -3px;
+    margin-top: -1px;
+    font-size: 5px;
+    position: absolute;
+    vertical-align:super;
+} 
+
+#leasys{
+    position: absolute;
+    bottom: 139px;
+    width: 121px;
+    height: 22px;
+    opacity: 0;
+}
+
+#befree{
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+    width: 55px;
+    opacity: 0;
+}
+
+#befree_white{
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+    width: 55px;
+}
+
+
+#spider{
+    position: absolute;
+    top: 99px;
+    opacity: 0;
+}
+
+#spider_fiat{
+    position: absolute;
+    width: 300px;
+    height: 600px;
+    left:0px;
+    top: 0px;
+}
+
+#navy_corner{
+    position: absolute;
+    left: -310px;
+}
+
+#navy_fader{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 972px;
+    height: 1200px;
+    background-image: url("../img/navy_fader.png");
+    background-size: 972px 1200px;
+    background-position: center center;
+
+}
+
+#tax_rays{
+    left: 109px;
+    top: 81px;
+    position: absolute;
+
+}
+
+#tax{
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background-image: url("../img/tax.png");
+    background-size: 110px 110px;
+    background-position: center center;
+}
+
+#tax_center{
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background-image: url("../img/tax_center.png");
+    background-size: 110px 110px;
+    background-position: center center;
+}
+
+#pound{
+    position: absolute;
+}
+
+#wheel{
+    position: absolute;
+}
+
+#pound-final{
+    visibility: hidden;
+}
+
+#wheel-start{
+    position: absolute;
+}
+
+#wheel-final{
+    visibility: hidden;
+}
+
+#truck{
+    position: absolute;
+}
+#hook-final{
+    visibility: hidden;
+}
+
+#sign{
+    position: absolute;
+}
+
+#e-mark{
+    position: absolute;
+    left: 100px;
+
+}
+
+#key{
+    position: absolute;
+}
+
+#navy_solid{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 300px;
+    height: 600px;
+    background-color: #244057;
+}
+
+#navy_solid_1{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 300px;
+    height: 600px;
+    background-color: #244057;
+}
+
+
+ 
+#base { 
+    background: transparent url('../img/fiat_124_spider.png') no-repeat; 
+    width: 180px; 
+    height: 150px;
+    top: 215px;
+    left: -9px;
+    background-size: 175px 146px;
+    background-position: center center;
+    position: absolute;
+    } 
+
+
+.tire {
+    position: absolute; 
+    background: transparent; 
+    width: 70px; 
+    height: 70px; 
+    left: 0; 
+    bottom: 0;
+}
+
+.tire_spin {
+    position: absolute; 
+    background: transparent; 
+    width: 70px; 
+    height: 70px; 
+    left: 0; 
+    top: 0; 
+}
+
+.tire_start { 
+    position: absolute; 
+    background: transparent url('../img/spider_wheel.png') right 0 no-repeat; 
+    width: 70px; 
+    height: 70px;
+}
+
+.tire_mid { 
+    position: absolute; 
+    background: transparent url('../img/spider_wheel.png') right -70px no-repeat; 
+    width: 70px; 
+    height: 70px; 
+}
+
+.tire_end { 
+    position: absolute; 
+    background: transparent url('../img/spider_wheel.png') right -140px no-repeat; 
+    width: 70px; 
+    height: 70px;
+    top: 1px; 
+}
+
+#tire_front {  
+    position: absolute; 
+    left: 61px;
+    bottom: 13px;
+    -webkit-transform: skewX(-2.7deg) scale(.22,.36); 
+}
+
+#tire_back { 
+    position: absolute; 
+    left: 118px;
+    bottom: 22px;
+    -webkit-transform: skewX(-2.1deg) scale(.13,.28); 
+}
+
+
+

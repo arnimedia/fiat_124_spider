@@ -1,0 +1,708 @@
+.centerThisVertical {
+    top: 50%;
+    -webkit-transform: translateY(-50%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: translateY(-50%); /* IE 9 */
+    transform: translateY(-50%); /* IE 10, Fx 16+, Op 12.1+ */
+    position: absolute;
+}
+
+.centerThisHorizontal {
+    left: 50%;
+    -webkit-transform: translateX(-50%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: translateX(-50%); /* IE 9 */
+    transform: translateX(-50%); /* IE 10, Fx 16+, Op 12.1+ */
+    position: absolute;
+}
+
+.centerThis {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: translate(-50%, -50%); /* IE 9 */
+    transform: translate(-50%, -50%); /* IE 10, Fx 16+, Op 12.1+ */
+    position: absolute;
+}
+
+
+
+html {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+    background-color: #FFFFFF;
+    margin: 0px;
+    padding: 0px;
+    width: 728px;
+    height: 90px;
+    overflow: hidden;
+    color: #fff;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+#container {
+    position: absolute;
+    width: 728px;
+    height: 90px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 100;
+    background-color: #f4f0de;
+}
+
+#black-fader {
+    position: absolute;
+    z-index: 9998;
+    width: 728px;
+    height: 90px;
+    pointer-events: none;
+    background-color: #000000;
+}
+
+#canvas {
+    position: absolute;
+    z-index: 1;
+}
+
+#banner_border {
+    z-index: 99999;
+    position: absolute;
+    border: 1px solid #666666;
+    width: 728px;
+    height: 90px;
+    pointer-events: none;
+}
+
+.full-screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 999
+}
+
+#bigImage1 {
+    position: absolute;
+    cursor: pointer;
+    width: 2100px;
+    height: 300px;
+    margin: auto;
+    pointer-events: none;
+}
+
+#bigImage2 {
+    position: absolute;
+    cursor: pointer;
+    width: 2100px;
+    height: 300px;
+    margin: auto;
+    pointer-events: none;
+}
+
+#copy-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.copy {
+    font-family: 'FiatAdvert-Euro', Arial, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.header {
+    color: #fff;
+    text-align: center;
+    font-size: 17px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1;
+	font-family: 'FiatAdvert-Euro', Arial, sans-serif;
+}
+
+.subheader {
+    color: #fff;
+    text-align: center;
+    font-size: 17px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 1.1;
+}
+
+sup{
+    font-size: 7px !important;
+    vertical-align:super;
+}
+
+.subcontainer {
+  position: absolute;
+  width: 402px !important;
+  height: 100%;
+  left:366px !important;
+  top: 0px !important;
+}
+
+#title1-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 45px;
+    left: 19px;
+
+    left: 78px;
+    top: 45px;
+    font-size: 17px;
+
+    pointer-events: none;
+    letter-spacing: 1px;
+    text-align: left;
+}
+#title8-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 45px;
+    left: 19px;
+    font-size: 19px;
+
+    left: 78px;
+    top: 45px;
+    font-size: 18px;
+
+    pointer-events: none;
+    letter-spacing: 1px;
+    text-align: left;
+}
+#subtitle-line8-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 65px;
+    left: -60px;
+    font-size: 12px;
+
+    left: 79px;
+    top: 62px;
+
+    pointer-events: none;
+    letter-spacing: -0.1px;
+    font-weight: 400;
+}
+
+#subtitle-line8 {
+    text-align: left;
+}
+
+#subtitle-line1-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 30px;
+    pointer-events: none;
+}
+
+#title2-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 22px;
+    pointer-events: none;
+    color: #244057;
+}
+
+#title2-container {
+    position: absolute;
+    width: 322px;
+    height: 100%;
+    left:0px;
+    top: 0px;
+    pointer-events: none;
+    color: #244057;
+}
+#title2 {
+    width: 100%;
+}
+
+#subtitle-line2-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 187px;
+    pointer-events: none;
+    color: #244057;
+}
+
+#title3-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 42px;
+    pointer-events: none;
+    color: #f4f0de;
+    opacity: 0;
+}
+
+#subtitle-line3-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 187px;
+    pointer-events: none;
+    color: #f4f0de;
+}
+
+#subtitle-line3 div:nth-child(3) {
+    font-size: 7px !important;
+    vertical-align: super;
+    margin-left: -4px;
+    margin-top: 0px;
+    display: inline-block;
+}
+
+#subtitle-line4 div:nth-child(3) {
+    font-size: 7px !important;
+    vertical-align: super;
+    margin-left: -4px;
+    margin-top: 0px;
+    display: inline-block;
+}
+
+#subtitle-line5 div:nth-child(3) {
+    font-size: 7px !important;
+    vertical-align: super;
+    margin-left: -4px;
+    margin-top: 0px;
+    display: inline-block;
+}
+
+#subtitle-line6 div:nth-child(3) {
+    font-size: 7px !important;
+    vertical-align: super;
+    margin-left: -4px;
+    margin-top: 0px;
+    display: inline-block;
+}
+
+#subtitle-line7 div:nth-child(3) {
+    font-size: 7px !important;
+    vertical-align: super;
+    margin-left: -4px;
+    margin-top: 0px;
+    display: inline-block;
+}
+
+
+#title4-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 42px;
+    pointer-events: none;
+    color: #244057;
+    opacity: 0;
+}
+
+#subtitle-line4-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 187px;
+    pointer-events: none;
+    color: #244057;
+    letter-spacing: 0.5px;
+}
+
+#title5-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 42px;
+    pointer-events: none;
+    color: #f4f0de;
+    opacity: 0;
+}
+
+#subtitle-line5-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 187px;
+    pointer-events: none;
+    color: #f4f0de;
+}
+
+#title6-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 42px;
+    pointer-events: none;
+    color: #244057;
+    opacity: 0;
+}
+
+#subtitle-line6-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 187px;
+    pointer-events: none;
+    color: #244057;
+    letter-spacing: 0.5px;
+}
+
+#title7-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 42px;
+    pointer-events: none;
+    color: #f4f0de;
+    opacity: 0;
+}
+
+#subtitle-line7-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 187px;
+    pointer-events: none;
+    color: #f4f0de;
+}
+
+#cta-container {
+    width: 122px;
+    height: 60px;
+    position: absolute;
+    text-align: center;
+    top: 90px;
+    left: 528px;
+    opacity: 1;
+}
+
+.cta {
+    font-size: 12px;
+    color: #FFF;
+    padding: 0px 7px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'FiatAdvert-Euro', Arial, sans-serif;
+    margin-top: -36px;
+}
+
+.cta:hover {
+    background-color: #ff0000;
+}
+
+.logo {
+    position: absolute;
+    opacity: 0;
+}
+
+#logo {
+    /*height: 40px;
+    bottom: 5px;
+    left: 5px;*/
+  left: 4px;
+  top: 28px;
+  width: 36px;
+  height: 37px;
+    opacity: 0;
+}
+
+#logo-fca {
+    height: 14px;
+    bottom: 14px;
+    left: 67px;
+}
+
+#terms {
+    font-size: 6px;
+    color: #244057;
+    padding: 5px 7px;
+    width: 80%;
+    position: absolute;
+    top: 0px;
+    font-family: "Arial", sans-serif;
+    opacity: 0;
+    text-align: center;
+    right: 2px;
+    letter-spacing: 0px;
+    line-height: 6px;
+    right: -150px;
+}
+
+ /* #terms:after {
+    position: absolute;
+    content: "";
+    width: 38px;
+    height: 7px;
+    background: transparent url('../img/leasys.png') no-repeat;
+} */
+
+#terms:before {
+    content:"*";
+    margin-left: -3px;
+    position: absolute;
+}
+
+#terms1 {
+    font-size: 7px;
+    color: #244057;
+    padding: 5px 7px;
+    position: absolute;
+    bottom: 5px;
+    font-family: "Arial", sans-serif;
+    opacity: 0;
+    right: 0px;
+    text-align: right;
+}
+
+#terms1:before {
+    content:"†";
+    margin-left: -3px;
+    margin-top: -1px;
+    font-size: 5px;
+    position: absolute;
+    vertical-align:super;
+}
+
+#leasys{
+    position: absolute;
+    right: 28px;
+    bottom: 4px;
+    width: 55px;
+    opacity: 0;
+}
+
+#befree{
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+    width: 55px;
+    opacity: 0;
+}
+
+#befree_white{
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+    width: 55px;
+}
+
+
+#spider{
+    position: absolute;
+    left: 78px;
+    top: 16px;
+    width: 146px;
+    height: 28px;
+    opacity: 0;
+}
+
+#spider_fiat{
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    left:0px;
+    top: 0px;
+}
+
+#navy_corner{
+    position: absolute;
+    left: -728px;
+}
+
+#navy_fader{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1944px;
+    height: 1668px;
+    background-image: url("../img/navy_fader.png");
+    background-size: 1944px 1668px;
+    background-position: center center;
+
+}
+
+#tax_rays{
+    left: 109px;
+    top: 81px;
+    position: absolute;
+
+}
+
+#tax{
+    position: absolute;
+    width: 84px;
+    height: 84px;
+    background-image: url("../img/tax.svg");
+    background-size: 84px 84px;
+    background-position: center center;
+}
+
+#tax_center{
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    background-image: url("../img/tax_center.svg");
+    background-size: 72px 72px;
+    background-position: center center;
+}
+
+#pound{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#wheel{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#pound-final{
+    visibility: hidden;
+}
+
+#wheel-start{
+    position: absolute;
+}
+
+#wheel-final{
+    visibility: hidden;
+}
+
+#truck{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+#hook-final{
+    visibility: hidden;
+}
+
+#sign{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#e-mark{
+    position: absolute;
+    left: 100px;
+
+}
+
+#key{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#navy_solid{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 728px;
+    height: 90px;
+    background-color: #244057;
+}
+
+#navy_solid_1{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 728px;
+    height: 90px;
+    background-color: #244057;
+}
+
+
+
+#base {
+    background: transparent url('../img/fiat_124_spider.png') no-repeat;
+    /*left: 394px;
+    top: 39px;*/
+    width: 187px;
+    height: 89px;
+    background-size: 187px 89px;
+    position: absolute;
+    }
+
+
+.tire {
+    position: absolute;
+    background: transparent;
+    width: 70px;
+    height: 70px;
+    left: 0;
+    bottom: 0;
+}
+
+.tire_spin {
+    position: absolute;
+    background: transparent;
+    width: 70px;
+    height: 70px;
+    left: 0;
+    top: 0;
+}
+
+.tire_start {
+    position: absolute;
+    background: transparent url('../img/spider_wheel.png') right 0 no-repeat;
+    width: 70px;
+    height: 70px;
+}
+
+.tire_mid {
+    position: absolute;
+    background: transparent url('../img/spider_wheel.png') right -70px no-repeat;
+    width: 70px;
+    height: 70px;
+}
+
+.tire_end {
+    position: absolute;
+    background: transparent url('../img/spider_wheel.png') right -140px no-repeat;
+    width: 70px;
+    height: 70px;
+    top: 1px;
+}
+
+#tire_front {
+    position: absolute;
+    left: 70px;
+    bottom: -2px;
+    -webkit-transform: skewX(-2.7deg) scale(.35,.62);
+}
+
+#tire_back {
+    position: absolute;
+    left: 140px;
+    bottom: 6px;
+    -webkit-transform: skewX(-2.5deg) scale(.23,.47);
+}
